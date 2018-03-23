@@ -1,0 +1,22 @@
+{
+  "name": "jquery-disable-with",
+  "version": "1.0.0",
+  "description": "Add-on to jQuery to enable auto disable options when submitting form in data-disable-with attributes.",
+  "main": "jquery.disablewith.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anduin2017/jquery-disable-with.git"
+  },
+  "keywords": [
+    "jquery"
+  ],
+  "author": "Anduin@aiursoft.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Anduin2017/jquery-disable-with/issues"
+  },
+  "homepage": "https://github.com/Anduin2017/jquery-disable-with#readme"
+}
