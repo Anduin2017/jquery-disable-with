@@ -8,15 +8,22 @@ Add-on to jQuery to enable auto disable options when submitting form in data-dis
 $ npm install jquery-disable-with
 ```
 
+And add your reference:
+
+```html
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/jquery-disable-with/src/jquery-disable-with.js"></script>
+```
+
 ## How to use
 
 Create a form
 
 ```html
-<form action="/post" method="post">
+<form action="example.html" method="post">
     <input type="email" name="email" />
     <input type="password" name="password" />
-    <input type="submit" value="sign in" />
+    <input type="submit" value="Sign in" />
 </form>
 ```
 
@@ -27,3 +34,5 @@ Add an attribute to the submit button.
 ```
 
 Run your app and click sign in button.
+
+When user is submitting the form, the sign in button will be disabled, and the text will be changed to 'Signing in...'
