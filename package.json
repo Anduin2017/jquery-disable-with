@@ -1,9 +1,10 @@
 {
   "name": "jquery-disable-with",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Add-on to jQuery to enable auto disable options when submitting form in data-disable-with attributes.",
   "main": "jquery.disablewith.js",
   "scripts": {
+    "bundle": "gulp bundle",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +22,13 @@
   "homepage": "https://github.com/Anduin2017/jquery-disable-with#readme",
   "dependencies": {
     "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-expect-file": "0.0.7",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
   }
 }
