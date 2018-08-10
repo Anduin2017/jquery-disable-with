@@ -1,5 +1,7 @@
 # jquery-disable-with
 
+[![npm](https://img.shields.io/npm/v/jquery-disable-with.svg?style=flat)](https://www.npmjs.com/package/jquery-disable-with)
+
 Add-on to jQuery to enable auto-disable options when submitting a form in data-disable-with attributes.
 
 Latest version: `1.1.0`
