@@ -4,15 +4,15 @@
 
 Add-on to jQuery to enable auto-disable options when submitting a form in data-disable-with attributes.
 
-Latest version: `1.1.0`
+Latest version: `1.2.0`
 
 ## How to install
 
 ```bash
-$ npm install jquery-disable-with
+$ npm install --save jquery-disable-with
 ```
 
-And add your reference:
+And check your reference. jQuery is required!
 
 ```html
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -24,19 +24,26 @@ And add your reference:
 Create a form
 
 ```html
-<form action="example.html" method="post">
-    <input type="email" name="email" />
+<form action="//slowaction" method="post">
+    <input type="email" name="email" required/>
     <input type="password" name="password" />
     <input type="submit" value="Sign in" />
 </form>
 ```
 
-Add an attribute to the submit button.
+Add a submit button:
 
 ```html
-<input type="submit" value="sign in" data-disable-with="Signing in..." />
+<input type="submit" value="Sign in" data-disable-with="Signing in..." />
 ```
 
-Run your app and click sign in button. When user is submitting the form, the sign in button will be disabled, and the text will be changed to 'Signing in...' so that user won't press it again until the server resposne.
+Or a simple button like this:
 
-Support with jQuery validation.
+```html
+<button type="submit" data-disable-with="Signing in...">Sign in</button>
+```
+
+Run your app and click sign in button. When user is submitting the form, the sign in button will be disabled, and the text will be changed to 'Signing in...' so that the user won't press it again until the server response.
+
+* Support with jQuery validation. Please view document [here](https://github.com/jquery-validation/jquery-validation)
+* Support with `required` attribute. Won't action when required fields are empty.
