@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // Active disable with tool
     $('*[data-disable-with]').each(function () {
-        // Prepare
+        // Prepare control and get basic values.
         var submitButton = $(this);
         var isButton = submitButton.is('button');
         var value = submitButton.attr('data-disable-with');
@@ -11,9 +11,12 @@ $(document).ready(function () {
         } else {
             prevalue = submitButton.val();
         }
+
+        // Form of the control
         var firstForm = submitButton.parents().filter("form").first();
+
+        // Handle form on submit to disable the control.
         firstForm.on('submit', function () {
-            //Set
             submitButton.attr('disabled', 'disabled');
             if (isButton) {
                 submitButton.html(value);
@@ -21,13 +24,17 @@ $(document).ready(function () {
                 submitButton.val(value);
             }
         });
-        submitButton.parents().filter("form").first().bind('invalid-form.validate', function () {
-            submitButton.removeAttr('disabled');
-            if (submitButton.is('button')) {
-                submitButton.html(prevalue);
-            } else {
-                submitButton.val(prevalue);
-            }
+
+        // Handle jquery validation invalid event.
+        firstForm.bind('invalid-form.validate', function () {
+            setTimeout(function () {
+                submitButton.removeAttr('disabled');
+                if (isButton) {
+                    submitButton.html(prevalue);
+                } else {
+                    submitButton.val(prevalue);
+                }
+            }, 1);
         });
     });
 });
