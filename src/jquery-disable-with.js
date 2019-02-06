@@ -14,6 +14,10 @@ $(document).ready(function () {
 
         // Form of the control
         var firstForm = submitButton.parents().filter("form").first();
+        if (firstForm && firstForm.length < 1) {
+            console.warn('The disable-with control needs to be put in a form.');
+            return;
+        }
 
         // Handle form on submit to disable the control.
         firstForm.on('submit', function () {
