@@ -4,8 +4,6 @@
 
 Add-on to jQuery to enable auto-disable options when submitting a form in data-disable-with attributes.
 
-Latest version: `1.2.2`
-
 See a demo [here](https://developer.aiursoft.com/Samples/DisableWithForm)
 
 ## How to install
