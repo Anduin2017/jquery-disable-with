@@ -1,4 +1,6 @@
-$(document).ready(function () {
+import $ from 'jquery';
+
+export function initDisableWith () {
     // Active disable with tool
     $('*[data-disable-with]').each(function () {
         // Prepare control and get basic values.
@@ -41,4 +43,4 @@ $(document).ready(function () {
             }, 1);
         });
     });
-});
+};
