@@ -19,6 +19,12 @@ And check your reference. jQuery is required!
 <script src="node_modules/jquery-disable-with/src/jquery-disable-with.js"></script>
 ```
 
+Or using es6:
+
+```javascript
+import 'jquery-disable-with';
+```
+
 ## How to use
 
 Create a form
@@ -47,3 +53,11 @@ Run your app and click sign in button. When user is submitting the form, the sig
 
 * Support with jQuery validation. Please view document [here](https://github.com/jquery-validation/jquery-validation)
 * Support with `required` attribute. Won't action when required fields are empty.
+
+## Advanced API
+
+Reinit plugin with pattern:
+
+```javascript
+initDisableWith('data-disable-with');
+```
