@@ -49,6 +49,12 @@ Or a simple button like this:
 <button type="submit" data-disable-with="Signing in...">Sign in</button>
 ```
 
+Init this libarary:
+
+```javascript
+new DisableWith('data-disable-with');
+```
+
 Run your app and click sign in button. When user is submitting the form, the sign in button will be disabled, and the text will be changed to 'Signing in...' so that the user won't press it again until the server response.
 
 * Support with jQuery validation. Please view document [here](https://github.com/jquery-validation/jquery-validation)
