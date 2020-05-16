@@ -1,12 +1,12 @@
 import $ from 'jquery';
 
-export function initDisableWith () {
+export function initDisableWith (pattern) {
     // Active disable with tool
-    $('*[data-disable-with]').each(function () {
+    $(`*[${pattern}]`).each(() => {
         // Prepare control and get basic values.
         var submitButton = $(this);
         var isButton = submitButton.is('button');
-        var value = submitButton.attr('data-disable-with');
+        var value = submitButton.attr(pattern);
         var prevalue = '';
         if (isButton) {
             prevalue = submitButton.html();
@@ -44,3 +44,5 @@ export function initDisableWith () {
         });
     });
 };
+
+initDisableWith('data-disable-with');
