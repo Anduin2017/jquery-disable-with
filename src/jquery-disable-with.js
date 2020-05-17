@@ -6,15 +6,15 @@ class DisableWith {
 
     initDisableWith(property) {
         $(`*[${property}]`).each((index, element) => {
-            var submitButton = $(element);
-            var value = submitButton.attr(property);
+            let submitButton = $(element);
+            let value = submitButton.attr(property);
             this.initElement(submitButton, value);
         });
     }
 
     initElement(submitButton, value) {
-        var isButton = submitButton.is('button');
-        var prevalue = '';
+        let isButton = submitButton.is('button');
+        let prevalue = '';
         if (isButton) {
             prevalue = submitButton.html();
         } else {
@@ -22,7 +22,7 @@ class DisableWith {
         }
 
         // Form of the control
-        var firstForm = submitButton.parents().filter("form").first();
+        let firstForm = submitButton.parents().filter("form").first();
         if (firstForm && firstForm.length < 1) {
             console.warn('The disable-with control needs to be put in a form.');
             return;
@@ -52,4 +52,4 @@ class DisableWith {
     }
 }
 
-export default DisableWith;
+export { DisableWith };

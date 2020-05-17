@@ -59,11 +59,3 @@ Run your app and click sign in button. When user is submitting the form, the sig
 
 * Support with jQuery validation. Please view document [here](https://github.com/jquery-validation/jquery-validation)
 * Support with `required` attribute. Won't action when required fields are empty.
-
-## Advanced API
-
-Reinit plugin with pattern:
-
-```javascript
-initDisableWith('data-disable-with');
-```
