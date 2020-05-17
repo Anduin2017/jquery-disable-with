@@ -7,6 +7,9 @@ module.exports = [
     output: {
       filename: 'jquery-disable-with.min.js',
       path: path.resolve(__dirname, 'dist'),
+      library: 'jquery-disable-with',
+      libraryTarget: 'umd',
+      globalObject: 'this'
     }
   },
   {
@@ -14,6 +17,9 @@ module.exports = [
     output: {
       filename: 'jquery-disable-with-bundle.min.js',
       path: path.resolve(__dirname, 'dist'),
+      library: 'jquery-disable-with',
+      libraryTarget: 'umd',
+      globalObject: 'this'
     }
   }
 ];
