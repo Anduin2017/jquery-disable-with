@@ -1,6 +1,6 @@
 {
   "name": "jquery-disable-with",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Add-on to jQuery to enable auto disable options when submitting form in data-disable-with attributes.",
   "scripts": {
     "build": "webpack"
