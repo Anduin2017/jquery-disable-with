@@ -1,55 +1,63 @@
-import $ from 'jquery';
 class DisableWith {
     constructor(property) {
         this.initDisableWith(property);
     }
 
     initDisableWith(property) {
-        $(`*[${property}]`).each((index, element) => {
-            let submitButton = $(element);
-            let value = submitButton.attr(property);
-            this.initElement(submitButton, value);
+        document.querySelectorAll(`*[${property}]`).forEach(element => {
+            let value = element.getAttribute(property);
+            this.initElement(element, value);
         });
     }
 
+    getParentForm(element) {
+        if(element.nodeName.toLowerCase() === 'form') {
+            return element;
+        }
+        if(element == null) {
+            return null;
+        }
+        return this.getParentForm(element.parentElement);
+    }
+
     initElement(submitButton, value) {
-        let isButton = submitButton.is('button');
+        let isButton = submitButton.nodeName.toLowerCase() === 'button';
         let prevalue = '';
         if (isButton) {
-            prevalue = submitButton.html();
+            prevalue = submitButton.innerHtml;
         } else {
-            prevalue = submitButton.val();
+            prevalue = submitButton.getAttribute("value");
         }
 
         // Form of the control
-        let firstForm = submitButton.parents().filter("form").first();
-        if (firstForm && firstForm.length < 1) {
+        let firstForm = this.getParentForm(submitButton);
+        if (!firstForm) {
             console.warn('The disable-with control needs to be put in a form.');
             return;
         }
 
         // Handle form on submit to disable the control.
-        firstForm.on('submit', function () {
-            submitButton.attr('disabled', 'disabled');
+        firstForm.onsubmit = function () {
+            submitButton.setAttribute('disabled', 'disabled');
             if (isButton) {
-                submitButton.html(value);
+                submitButton.innerHtml = value;
             } else {
-                submitButton.val(value);
+                submitButton.setAttribute('value', value);
             }
-        });
+        };
 
         // Handle jquery validation invalid event.
-        firstForm.bind('invalid-form.validate', function () {
+        firstForm.addEventListener('invalid-form.validate', function () {
             setTimeout(function () {
-                submitButton.removeAttr('disabled');
+                submitButton.removeAttribute('disabled');
                 if (isButton) {
-                    submitButton.html(prevalue);
+                    submitButton.innerHtml = prevalue;
                 } else {
-                    submitButton.val(prevalue);
+                    submitButton.setAttribute('value', prevalue);
                 }
             }, 1);
         });
     }
 }
 
-export { DisableWith };
+export default DisableWith;

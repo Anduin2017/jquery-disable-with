@@ -1,15 +1,22 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
+const production = process.env.NODE_ENV === 'production' || false;
 
-module.exports = [
-  {
-    entry: './src/jquery-disable-with.js',
-    externals: { jquery: 'jQuery' },
-    mode: "production",
+module.exports = {
+    entry: ['./src/jquery-disable-with.js'],
+    mode: 'production',
     output: {
-      filename: 'jquery-disable-with.min.js',
-      path: path.resolve(__dirname, 'dist'),
-      libraryTarget: 'umd',
-      globalObject: 'this'
+        filename: production ? 'jquery-disable-with.min.js' : 'jquery-disable-with.js',
+        path: path.resolve(__dirname, 'dist'),
+        globalObject: 'this',
+        library: 'DisableWith',
+        libraryExport: 'default',
+        libraryTarget: 'umd'
+    },
+    optimization: {
+        minimize: production,
+        minimizer: [
+          new TerserPlugin({ })
+        ]
     }
-  }
-];
+};
