@@ -3,7 +3,7 @@ class DisableWith {
         this.initDisableWith(property);
     }
 
-    initDisableWith(property: string) {
+    initDisableWith(property: string): void {
         document.querySelectorAll(`*[${property}]`).forEach(element => {
             let value = element.getAttribute(property);
             this.initElement(element, value);
@@ -11,16 +11,16 @@ class DisableWith {
     }
 
     getParentForm(element: Element): Element {
-        if(element.nodeName.toLowerCase() === 'form') {
+        if (element.nodeName.toLowerCase() === 'form') {
             return element;
         }
-        if(element == null) {
+        if (element == null) {
             return null;
         }
         return this.getParentForm(element.parentElement);
     }
 
-    initElement(submitButton:Element, value: string) {
+    initElement(submitButton: Element, value: string): void {
         let isButton = submitButton.nodeName.toLowerCase() === 'button';
         let prevalue = '';
         if (isButton) {
@@ -47,8 +47,8 @@ class DisableWith {
         });
 
         // Handle jquery validation invalid event.
-        firstForm.addEventListener('invalid-form.validate', function () {
-            setTimeout(function () {
+        firstForm.addEventListener('invalid-form.validate', () => {
+            setTimeout(() => {
                 submitButton.removeAttribute('disabled');
                 if (isButton) {
                     submitButton.innerHTML = prevalue;
