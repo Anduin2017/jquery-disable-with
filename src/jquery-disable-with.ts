@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 class DisableWith {
     constructor(property: string) {
         this.initDisableWith(property);
@@ -45,9 +47,9 @@ class DisableWith {
                 submitButton.setAttribute('value', value);
             }
         });
-
+        
         // Handle jquery validation invalid event.
-        firstForm.addEventListener('invalid-form.validate', () => {
+        $(firstForm).bind('invalid-form.validate', () => {
             setTimeout(() => {
                 submitButton.removeAttribute('disabled');
                 if (isButton) {
