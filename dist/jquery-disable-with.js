@@ -108,7 +108,7 @@ module.exports = __webpack_require__(1);
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var jquery_1 = __webpack_require__(2);
+var $ = __webpack_require__(2);
 var DisableWith = /** @class */ (function () {
     function DisableWith(property) {
         this.initDisableWith(property);
@@ -155,7 +155,7 @@ var DisableWith = /** @class */ (function () {
             }
         });
         // Handle jquery validation invalid event.
-        jquery_1.default(firstForm).bind('invalid-form.validate', function () {
+        $(firstForm).bind('invalid-form.validate', function () {
             setTimeout(function () {
                 submitButton.removeAttribute('disabled');
                 if (isButton) {
