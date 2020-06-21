@@ -1,14 +1,12 @@
-import * as $ from 'jquery';
-
 class DisableWith {
-    constructor(property: string) {
-        this.initDisableWith(property);
+    constructor(property: string, onInit: (form: Element, button: Element, preValue: string, isButton: boolean) => void) {
+        this.initDisableWith(property, onInit);
     }
 
-    initDisableWith(property: string): void {
+    initDisableWith(property: string, onInit: (form: Element, button: Element, preValue: string, isButton: boolean) => void): void {
         document.querySelectorAll(`*[${property}]`).forEach(element => {
             let value = element.getAttribute(property);
-            this.initElement(element, value);
+            this.initElement(element, value, onInit);
         });
     }
 
@@ -22,7 +20,7 @@ class DisableWith {
         return this.getParentForm(element.parentElement);
     }
 
-    initElement(submitButton: Element, value: string): void {
+    initElement(submitButton: Element, value: string, onInit: (form: Element, button: Element, preValue: string, isButton: boolean) => void): void {
         let isButton = submitButton.nodeName.toLowerCase() === 'button';
         let prevalue = '';
         if (isButton) {
@@ -47,18 +45,9 @@ class DisableWith {
                 submitButton.setAttribute('value', value);
             }
         });
-        
-        // Handle jquery validation invalid event.
-        $(firstForm).bind('invalid-form.validate', () => {
-            setTimeout(() => {
-                submitButton.removeAttribute('disabled');
-                if (isButton) {
-                    submitButton.innerHTML = prevalue;
-                } else {
-                    submitButton.setAttribute('value', prevalue);
-                }
-            }, 1);
-        });
+        if (onInit) {
+            onInit(firstForm, submitButton, prevalue, isButton);
+        }
     }
 }
 
