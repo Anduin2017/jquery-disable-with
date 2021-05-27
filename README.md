@@ -15,14 +15,13 @@ $ npm install --save jquery-disable-with
 And check your reference. jQuery is required!
 
 ```html
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/jquery-disable-with/src/jquery-disable-with.js"></script>
+<script src="node_modules/jquery-disable-with/dist/jquery-disable-with.js"></script>
 ```
 
 Or using es6:
 
 ```javascript
-import 'jquery-disable-with';
+import DisableWith from 'jquery-disable-with';
 ```
 
 ## How to use
@@ -55,7 +54,7 @@ Init this libarary:
 new DisableWith('data-disable-with');
 ```
 
-Run your app and click sign in button. When user is submitting the form, the sign in button will be disabled, and the text will be changed to 'Signing in...' so that the user won't press it again until the server response.
+Run your app and click the sign-in button. When the user is submitting the form, the sign-in button will be disabled, and the text will be changed to 'Signing in...' so that the user won't press it again until the server responds.
 
 * Support with jQuery validation. Please view document [here](https://github.com/jquery-validation/jquery-validation)
 * Support with `required` attribute. Won't action when required fields are empty.

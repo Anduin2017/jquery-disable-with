@@ -1,7 +1,7 @@
 {
   "name": "jquery-disable-with",
   "version": "2.2.2",
-  "description": "Add-on to jQuery to enable auto disable options when submitting form in data-disable-with attributes.",
+  "description": "To enable auto-disable options when submitting a form in data-disable-with attributes.",
   "scripts": {
     "build": "webpack"
   },
@@ -10,18 +10,17 @@
     "url": "git+ssh://git@github.com/Anduin2017/jquery-disable-with.git"
   },
   "keywords": [
-    "jquery"
+    "disable-with"
   ],
   "main": "dist/jquery-disable-with.js",
   "author": "anduin@aiursoft.com",
   "license": "MIT",
   "homepage": "https://github.com/Anduin2017/jquery-disable-with#readme",
   "devDependencies": {
-    "@types/jquery": "^3.3.38",
-    "terser-webpack-plugin": "^3.0.1",
-    "ts-loader": "^7.0.5",
-    "typescript": "^3.9.5",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "terser-webpack-plugin": "^5.1.2",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.0",
+    "webpack-cli": "^4.7.0"
   }
 }
