@@ -9,7 +9,7 @@ See a demo [here](https://developer.aiursoft.com/Samples/DisableWithForm)
 ## How to install
 
 ```bash
-$ npm install --save jquery-disable-with
+npm install --save jquery-disable-with
 ```
 
 And check your reference. jQuery is required!
