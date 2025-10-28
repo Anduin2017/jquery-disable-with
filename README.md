@@ -1,7 +1,7 @@
 # jquery-disable-with
 
 [![npm](https://img.shields.io/npm/v/jquery-disable-with.svg?style=flat)](https://www.npmjs.com/package/jquery-disable-with)
-[![ManHours](https://manhours.aiursoft.cn/r/gitlab.aiursoft.com/anduin/jquery-disable-with.svg)](https://gitlab.aiursoft.com/anduin/jquery-disable-with/-/commits/master?ref_type=heads)
+[![ManHours](https://manhours.aiursoft.com/r/gitlab.aiursoft.com/anduin/jquery-disable-with.svg)](https://gitlab.aiursoft.com/anduin/jquery-disable-with/-/commits/master?ref_type=heads)
 
 Add-on to jQuery to enable auto-disable options when submitting a form in data-disable-with attributes.
 
